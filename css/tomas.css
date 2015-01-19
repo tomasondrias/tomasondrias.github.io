@@ -1,0 +1,33 @@
+div.thumbnail, div.panel-body {
+	background-color: #F8F8F8;
+}
+
+@media(max-width: 767px) {
+	h2 a {
+    	font-size: 20px;
+	}
+	p, .panel-body {
+		font-size: 14px;
+	}
+}
+
+@media(min-width: 768px) {
+	h2 a {
+    	font-size: 26px;
+	}
+	p, .panel-body {
+		font-size: 16px;
+	}
+}
+
+@media(min-width: 992px) {
+	h2 a {
+    	font-size: 30px;
+	}
+}
+
+@media(min-width: 1200px) {
+	h2 a {
+    	font-size: 34px;
+	}
+}
