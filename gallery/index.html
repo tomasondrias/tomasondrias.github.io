@@ -86,10 +86,6 @@
                     <a href="/contact/">Contact</a>
                 </li>
                 
-                <li>
-                    <a href="/admin/">Admin</a>
-                </li>
-                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -107,86 +103,110 @@
 
 <br><br>
 
-<ul class="nav nav-tabs">
-	<li class="active"><a href="#">Concerts</a></li>
-	<li><a href="#">Profile</a></li>
-	<li><a href="#">Adventný Koncert</a></li>
-	<li><a href="#">Dolná Krupá</a></li>
-	<li><a href="#">Mix</a></li>
+<ul class="nav nav-tabs" id="nav-tabs">
 </ul>
 	
-<div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4055.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4093.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
+<div id="images">
 </div>
 
-<div class="row">
-	<div class="col-sm-12 col-md-12 col-lg-12">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4208.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-</div>
+<span style="font-size: 16px; margin-top: 20px;">Foto: Lea Lovišková, 2015</span>
 
-<div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4395.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4408cb.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-</div>
+<script>
 
-<div class="row">
-	<div class="col-sm-12 col-md-12 col-lg-12">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4213.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-</div>
+var tabs = document.getElementById('nav-tabs');
+var listItems = [];
+var firstKey = undefined;
+var gallery = undefined;
+var keys = [];
 
-<div class="row">
-	<div class="col-sm-12 col-md-12 col-lg-12">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4387cb.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-</div>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
 
-<div class="row">
-	<div class="col-sm-12 col-md-12 col-lg-12">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4329.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-</div>
+		gallery = JSON.parse(this.responseText);
 
-<div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4350cb.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_4173.jpg" alt="Tomas Ondrias" >
-	  	</div>
-	</div>
-</div>
+		var index = 0;
+		for (var key in gallery) {
+			if (gallery.hasOwnProperty(key)) {
 
-<span style="font-size: 16px;">Foto: Lea Lovišková, 2015</span>
+				var li = document.createElement('li');
+				if (index == 0) {
+					li.classList.add('active');
+					firstKey = key;
+				}
+				keys.push(key);
+				tabs.appendChild(li);
+
+				var a = document.createElement('a');
+				a.innerHTML = key;
+				a.style = 'cursor: pointer';
+				li.appendChild(a);
+
+				listItems.push(li);
+
+				var imgs = gallery[key];
+				for (var i = 0; i < imgs.length; i++) {
+					var img = imgs[i];
+				}
+
+				index++;
+			}
+		}
+
+		for ( var i = 0; i < listItems.length; i++ ) (function(i){ 
+			listItems[i].onclick = function() {
+				selectTab(i);
+			}
+		})(i);
+
+		generateImages(firstKey);
+  }
+};
+xhttp.open("GET", "/json/gallery.json", true);
+xhttp.send();
+
+function selectTab(index) {
+	for (var i = 0; i < listItems.length; i++) {
+		listItems[i].classList = '';
+	}
+
+	listItems[index].classList.add('active');
+	var key = keys[index];
+	generateImages(key);
+}
+
+function generateImages(key) {
+
+	var images = document.getElementById('images');
+	images.innerHTML = '';
+
+	for (var i = 0; i < gallery[key].length; i += 2) {
+		var row = document.createElement('div');
+		row.classList = 'row';
+		images.appendChild(row);
+
+		for (var i2 = 0; i2 < 2; i2++) {
+			if (gallery[key][i + 1] == undefined && i2 == 1) continue;
+
+			var col = document.createElement('div');
+			col.classList = 'col-sm-6 col-md-6 col-lg-6';
+			row.appendChild(col);
+
+			var thumbnail = document.createElement('div');
+			thumbnail.classList = 'thumbnail';
+			col.appendChild(thumbnail);
+
+			var img = document.createElement('img');
+			img.classList = 'img-responsive';
+			img.alt = 'Tomas Ondrias';
+			var imgSrc = i2 == 0 ? gallery[key][i] : gallery[key][i + 1];
+			img.src = "http://tomasondrias.com/img/" + imgSrc;
+			thumbnail.appendChild(img);
+		}
+	}
+}
+
+</script>
 		</div>
 	</div>
 </div>

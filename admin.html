@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <title>Admin</title>
+</head>
+<body>
+  <h3 class="jumbotron text-center">Schedule - pridat concert</h3>
+
+  <div class="form-group w-50 m-auto">
+    <label for="date"><b>Datum</b></label>
+    <input type="text" class="form-control" autocomplete="off" id="date">
+
+    <label for="type"><b>Typ</b></label>
+    <input type="text" class="form-control" autocomplete="off" id="type">
+
+    <label for="opis"><b>Opis</b></label>
+    <input type="text" class="form-control" autocomplete="off" id="desc">
+
+    <label for="place"><b>Miesto</b></label>
+    <input type="text" class="form-control" autocomplete="off" id="place">
+
+    <button onclick="addConcert();" style="margin-top: 20px" class="btn btn-dark">Ukazat kod</button>
+  </div>
+
+  <p id="output" class="w-50 m-auto mt-3">
+
+  </p>
+
+<script>
+
+var jsonBefore = "";
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    jsonBefore = this.responseText;
+    console.log(jsonBefore);
+  }
+};
+var url = window.location.protocol + '//' + window.location.host + "/json/new_schedule.json";
+xhttp.open("GET", url, true);
+xhttp.send();
+
+function addConcert() {
+  var date = document.getElementById('date').value;
+  var type = document.getElementById('type').value;
+  var desc = document.getElementById('desc').value;
+  var place = document.getElementById('place').value;
+
+  var concert = {
+    "Date": date,
+    "Type": type,
+    "Description": desc,
+    "Place": place
+  };
+
+  var jsonObj = JSON.parse(jsonBefore);
+  jsonObj.push(concert);
+  var output = JSON.stringify(jsonObj);
+  document.getElementById('output').innerHTML = output;
+}
+
+</script>
+</body>
+</html>

@@ -86,10 +86,6 @@
                     <a href="/contact/">Contact</a>
                 </li>
                 
-                <li>
-                    <a href="/admin/">Admin</a>
-                </li>
-                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -105,41 +101,39 @@
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<br>
 <div align="center">
-	<img class="img-thumbnail" src="/img/home.jpg" alt="Tomas Ondrias" >
+	<img class="img-thumbnail" src="/img/home.jpg" alt="Tomas Ondrias" id="fotka1" >
 </div>
 
 <div class="row">
 	<div class="col-sm-6 col-md-6 col-lg-6">
 	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/Plagat 1.jpg" alt="Tomas Ondrias" >
+	    	<img class="img-responsive" src="/img/Plagat 1.jpg" alt="Tomas Ondrias" id="fotka2_lava" >
 	  	</div>
 	</div>
 	<div class="col-sm-6 col-md-6 col-lg-6">
 	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/Plagat 2.jpg" alt="Tomas Ondrias" >
+	    	<img class="img-responsive" src="/img/Plagat 2.jpg" alt="Tomas Ondrias" id="fotka3_prava" >
 	  	</div>
 	</div>
 </div>
 
 <br>
 <div class="thumbnail">
-	<div class="embed-responsive embed-responsive-4by3">
-		<iframe width="560" height="420" src="http://www.youtube.com/embed/ofJXp0cZ7nE?color=white&amp;theme=light">&nbsp;</iframe>
+	<div class="embed-responsive embed-responsive-4by3" id="video">
 	</div>
-	<div class="caption">
-		<b>K. Elbert</b> - Aká to vôňa
+	<div class="caption" id="video-caption">
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-sm-6 col-md-6 col-lg-6">
 	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_0852.jpg" alt="Tomas Ondrias" >
+	    	<img class="img-responsive" src="/img/profi_foto/DSC_0852.jpg" alt="Tomas Ondrias" id="fotka4_lava" >
 	  	</div>
 	</div>
 	<div class="col-sm-6 col-md-6 col-lg-6">
 	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/DSC_1046.jpg" alt="Tomas Ondrias" >
+	    	<img class="img-responsive" src="/img/profi_foto/DSC_1046.jpg" alt="Tomas Ondrias" id="fotka5_prava" >
 	  	</div>
 	</div>
 </div>
@@ -147,10 +141,38 @@
 <div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">
 	  	<div class="thumbnail">
-	    	<img class="img-responsive" src="/img/profi_foto/presov2015jun.zastupitelstvo.jpg" alt="Tomas Ondrias" >
+	    	<img class="img-responsive" src="/img/profi_foto/presov2015jun.zastupitelstvo.jpg" alt="Tomas Ondrias" id="fotka6" >
 	  	</div>
 	</div>
 </div>
+
+<script>
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+		var pageData = JSON.parse(this.responseText);
+		document.getElementById('fotka1').src = "http://tomasondrias.com/img/" + pageData.fotka1;
+		document.getElementById('fotka2_lava').src = "http://tomasondrias.com/img/" + pageData.fotka2_lava;
+		document.getElementById('fotka3_prava').src = "http://tomasondrias.com/img/" + pageData.fotka3_prava;
+		document.getElementById('fotka4_lava').src = "http://tomasondrias.com/img/" + pageData.fotka4_lava;
+		document.getElementById('fotka5_prava').src = "http://tomasondrias.com/img/" + pageData.fotka5_prava;
+		document.getElementById('fotka6').src = "http://tomasondrias.com/img/" + pageData.fotka6;
+
+		var iframe = document.createElement('iframe');
+		iframe.width = 560;
+		iframe.height = 420;
+		iframe.innerHTML = '&nbsp;';
+		iframe.src = 'http://www.youtube.com/embed/' + pageData.video.url + '?color=white&amp;theme=light';
+		document.getElementById('video').appendChild(iframe);
+		var caption = `<b>${pageData.video.autor}</b> - ${pageData.video.nazov}`;
+		document.getElementById('video-caption').innerHTML = caption;
+  }
+};
+xhttp.open("GET", "/json/home.json", true);
+xhttp.send();
+
+</script>
 		</div>
 	</div>
 </div>
