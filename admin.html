@@ -59,7 +59,7 @@ function addConcert() {
 
   var jsonObj = JSON.parse(jsonBefore);
   jsonObj.push(concert);
-  var output = JSON.stringify(jsonObj);
+  var output = JSON.stringify(jsonObj, null, 0);
   document.getElementById('output').innerHTML = output;
 }
 
