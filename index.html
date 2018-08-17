@@ -11,7 +11,7 @@
 
     <title>Tomas Ondrias</title>
 
-    <link rel="canonical" href="http://tomasondrias.com/">
+    <link rel="canonical" href="http://tomasondrias.github.io/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -152,12 +152,12 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
 		var pageData = JSON.parse(this.responseText);
-		document.getElementById('fotka1').src = "http://tomasondrias.com/img/" + pageData.fotka1;
-		document.getElementById('fotka2_lava').src = "http://tomasondrias.com/img/" + pageData.fotka2_lava;
-		document.getElementById('fotka3_prava').src = "http://tomasondrias.com/img/" + pageData.fotka3_prava;
-		document.getElementById('fotka4_lava').src = "http://tomasondrias.com/img/" + pageData.fotka4_lava;
-		document.getElementById('fotka5_prava').src = "http://tomasondrias.com/img/" + pageData.fotka5_prava;
-		document.getElementById('fotka6').src = "http://tomasondrias.com/img/" + pageData.fotka6;
+		document.getElementById('fotka1').src = "http://tomasondrias.github.io/img/" + pageData.fotka1;
+		document.getElementById('fotka2_lava').src = "http://tomasondrias.github.io/img/" + pageData.fotka2_lava;
+		document.getElementById('fotka3_prava').src = "http://tomasondrias.github.io/img/" + pageData.fotka3_prava;
+		document.getElementById('fotka4_lava').src = "http://tomasondrias.github.io/img/" + pageData.fotka4_lava;
+		document.getElementById('fotka5_prava').src = "http://tomasondrias.github.io/img/" + pageData.fotka5_prava;
+		document.getElementById('fotka6').src = "http://tomasondrias.github.io/img/" + pageData.fotka6;
 
 		var iframe = document.createElement('iframe');
 		iframe.width = 560;
