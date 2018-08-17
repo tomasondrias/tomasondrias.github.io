@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tomas Ondrias is a graduate of opera singing at the Academy of Performing Arts in Bratislava. He worked with Opernfestspielen St. Margarethen (2012), Operettenfestspielen Bad Hall (2014) under the baton of conductors as Alfred Eschwé, Gustav Kuhn and Gergard Lagrange. While studying at the Academy of Performing Arts he is presented within opera studies as Don Asdrubale and Pulcherio in Mozart's opera Lo Sposo Deluso. He interprets classic songs, opera, operetta and pop opera (operatic pop). As a soloist sings he in vocal-instrumental ensemble Cavalieri, which is mainly devoted to the interpretation of the operetta genre in its specific arrangement. As a soloist he regularly participates in the Slovak National Song Festival, organized by the Matica Slovenská. Tomas Ondrias is an active performer and singer at many events in Slovakia and abroad.">
+    <meta name="description" content="Tomas Ondrias is a graduate of opera singing at the Academy of Performing Arts in Bratislava. He worked with Opernfestspielen St. Margarethen (2012), Operettenfestspielen Bad Hall (2014) under the baton of conductors as Alfred Eschwé, Gustav Kuhn and Gergard Lagrange. While studying at the Academy of Performing Arts he is presented within opera studies as Don Asdrubale and Pulcherio in Mozart's opera Lo Sposo Deluso. He interprets classic songs, opera, operetta and pop opera (operatic pop). As a soloist he sings in vocal-instrumental ensemble Cavalieri, which is mainly devoted to the interpretation of the operetta genre in its specific arrangement. As a soloist he regularly participates in the Slovak National Song Festival, organized by the Matica Slovenská. Tomas Ondrias is an active performer and singer at many events in Slovakia and abroad.">
 	<meta name="keywords" content="opera,tenor,operetta,singing">
 
     <title>Tomas Ondrias - Schedule</title>
@@ -86,6 +86,10 @@
                     <a href="/contact/">Contact</a>
                 </li>
                 
+                <li>
+                    <a href="/admin/">Admin</a>
+                </li>
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -103,7 +107,7 @@
 
 <!-- <img class="img-thumbnail" style="margin-left: 10px; margin-bottom: 20px;" src="/img/schedule.jpg" alt="Tomas Ondrias" >
 -->
-
+<!--
 <br>
 <div class="text-center">
   <a href="#2015">2015</a>&nbsp;&nbsp;
@@ -1052,7 +1056,67 @@
 </div>
 
 
+-->
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Place</th>
+    </tr>
+  </thead>
+  <tbody id="table-body" style="font-weight: 100">
+  </tbody>
+</table>
+
+<script>
+  
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var concerts = JSON.parse(this.responseText);
+    for (var i = 0; i < concerts.length; i++) {
+      var concert = concerts[i];
+      addConcert(concert.Date, concert.Type, concert.Description, concert.Place);
+    }
+  }
+};
+xhttp.open("GET", "/json/new_schedule.json", true);
+xhttp.send();
+
+var thStyle = "font-weight: 500; font-size: 14px;";
+function addConcert(date, type, description, place) {
+  var table = document.getElementById('table-body');
+
+  var tr = document.createElement("tr");
+  table.appendChild(tr);
+
+  var th1 = document.createElement("th");
+  th1.innerHTML = date;
+  th1.style = thStyle;
+  tr.appendChild(th1);
+
+  var th2 = document.createElement("th");
+  tr.appendChild(th2);
+  var badge = document.createElement('span');
+  badge.classList = 'badge badge-primary bg-primary';
+  badge.innerHTML = type;
+  th2.appendChild(badge);
+
+  var th3 = document.createElement("th");
+  th3.innerHTML = description;
+  th3.style = thStyle;
+  tr.appendChild(th3);
+
+  var th4 = document.createElement("th");
+  th4.innerHTML = place;
+  th4.style = thStyle;
+  tr.appendChild(th4);
+}
+
+</script>
 		</div>
 	</div>
 </div>
@@ -1086,7 +1150,7 @@
                     
                     
                     <li>
-                        <a href="https://instagram.com/tomasondrias" target="_blank" title="Instagram">
+                        <a href="https://instagram.com/tomiondrias_tenor" target="_blank" title="Instagram">
                             <span class="fa-stack fa-2x" style="color: #517fa4">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -1115,7 +1179,7 @@
                     </li>
                     
                 </ul>
-                <p class="copyright text-muted">&copy; Tomas Ondrias 2017</p>
+                <p class="copyright text-muted">&copy; Tomas Ondrias 2018</p>
             </div>
         </div>
     </div>
