@@ -1,116 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Tomas Ondrias is a graduate of opera singing at the Academy of Performing Arts in Bratislava. He worked with Opernfestspielen St. Margarethen (2012), Operettenfestspielen Bad Hall (2014) under the baton of conductors as Alfred Eschwé, Gustav Kuhn and Gergard Lagrange. While studying at the Academy of Performing Arts he is presented within opera studies as Don Asdrubale and Pulcherio in Mozart's opera Lo Sposo Deluso. He interprets classic songs, opera, operetta and pop opera (operatic pop). As a soloist he sings in vocal-instrumental ensemble Cavalieri, which is mainly devoted to the interpretation of the operetta genre in its specific arrangement. As a soloist he regularly participates in the Slovak National Song Festival, organized by the Matica Slovenská. Tomas Ondrias is an active performer and singer at many events in Slovakia and abroad.">
+		<meta name="keywords" content="opera,tenor,operetta,singing">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tomas Ondrias is a graduate of opera singing at the Academy of Performing Arts in Bratislava. He worked with Opernfestspielen St. Margarethen (2012), Operettenfestspielen Bad Hall (2014) under the baton of conductors as Alfred Eschwé, Gustav Kuhn and Gergard Lagrange. While studying at the Academy of Performing Arts he is presented within opera studies as Don Asdrubale and Pulcherio in Mozart's opera Lo Sposo Deluso. He interprets classic songs, opera, operetta and pop opera (operatic pop). As a soloist he sings in vocal-instrumental ensemble Cavalieri, which is mainly devoted to the interpretation of the operetta genre in its specific arrangement. As a soloist he regularly participates in the Slovak National Song Festival, organized by the Matica Slovenská. Tomas Ondrias is an active performer and singer at many events in Slovakia and abroad.">
-	<meta name="keywords" content="opera,tenor,operetta,singing">
+		<title>Tomas Ondrias - Gallery</title>
 
-    <title>Tomas Ondrias - Gallery</title>
+		<link rel="canonical" href="http://tomasondrias.com/gallery/">
 
-    <link rel="canonical" href="http://tomasondrias.com/gallery/">
+		<!-- Bootstrap Core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="/css/clean-blog.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
+		<!-- Site CSS -->
+		<link rel="stylesheet" href="/css/tomas.css">
 
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="/css/tomas.css">
+		<!-- Custom Fonts -->
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- Custom Fonts -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<style>
+			#gallery-close-up {
+				background-color: rgba(0, 0, 0, 0.815);
+				width: 100%;
+				height: 100vh;
+				display: none;
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				top: 0;
+				z-index: 1;
+			}
+			
+			#gallery-img {
+				margin: auto;
+				height: 100%;
+			}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+			img.transparent {
+				opacity:0;
+			}
+			
+			.arrow {
+				font-size: 35px;
+				cursor: pointer;
+				color: white;
+				z-index: 2;
+			}
+			
+			#left {
+				position: absolute;
+				float: left;
+				left: 100px;
+			}
+			
+			#right {
+				position: absolute;
+				float: right;
+				right: 100px;
+			}
+			
+			.close-btn {
+				font-size: 50px;
+				position: absolute;
+				float: right;
+				right: 20px;
+				top: 50px;
+				color: white;
+				z-index: 2;
+				cursor: pointer;
+			}
 
+			.close-btn:hover, arrow:hover {
+				color: lightgrey;
+			}
+
+			.images-container {
+				width: 60%;
+				margin: auto;
+			}
+	</style>
 </head>
-
-
 <body>
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header page-scroll">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand hidden-xs" href="/">
+										<span style="color: black;">T O M A S &nbsp;&nbsp; O N D R I A S</span> &nbsp;&nbsp; T E N O R
+								</a>
+								<a class="navbar-brand visible-xs-inline" href="/">
+										<span style="color: black;">Tomas &nbsp;Ondrias</span> &#8203; Tenor
+								</a>
+						</div>
 
-	<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand hidden-xs" href="/">
-                <span style="color: black;">T O M A S &nbsp;&nbsp; O N D R I A S</span> &nbsp;&nbsp; T E N O R
-            </a>
-            <a class="navbar-brand visible-xs-inline" href="/">
-                <span style="color: black;">Tomas &nbsp;Ondrias</span> &#8203; Tenor
-            </a>
-        </div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-right">
+										<li>
+												<a href="/">Home</a>
+										</li>
+										
+										
+										<li>
+												<a href="/about/">About me</a>
+										</li>
+										
+										<li>
+												<a href="/schedule/">Schedule</a>
+										</li>
+										
+										<li>
+												<a href="/gallery/">Gallery</a>
+										</li>
+										
+										<li>
+												<a href="/video/">Video</a>
+										</li>
+										
+										<li>
+												<a href="/contact/">Contact</a>
+										</li>
+										
+										<li>
+												<a href="/test/">Gallery</a>
+										</li>
+										
+								</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+		</nav>
+		
+		<h1 class="text-center" style="margin-top: 100px;">Gallery</h1>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                
-                
-                <li>
-                    <a href="/about/">About me</a>
-                </li>
-                
-                <li>
-                    <a href="/schedule/">Schedule</a>
-                </li>
-                
-                <li>
-                    <a href="/gallery/">Gallery</a>
-                </li>
-                
-                <li>
-                    <a href="/video/">Video</a>
-                </li>
-                
-                <li>
-                    <a href="/contact/">Contact</a>
-                </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-	<br>
-<br>
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<h1 class="text-center">Gallery</h1>
-
-<br><br>
-
-<ul class="nav nav-tabs" id="nav-tabs">
-</ul>
-	
-<div id="images">
-</div>
-
-<span style="font-size: 16px; margin-top: 20px;">Foto: Lea Lovišková, 2015</span>
-
+		<br><br>
+		
+		<div id="gallery-close-up">
+			<div class="close-btn" onclick="closeLightbox();">&times;</div>
+			<img id="gallery-img">
+			<div id="left" class="arrow" onclick="left();">&#10094;</div>
+			<div id="right" class="arrow" onclick="right();">&#10095;</div>
+		</div>
+		
+		<div class="images-container">
+			<ul class="nav nav-tabs" id="nav-tabs"></ul>
+			<div id="images"></div>
+			<span style="font-size: 16px; margin-top: 20px;">Foto: Lea Lovišková, 2015</span>
+		</div>
+		
 <script>
 
 var tabs = document.getElementById('nav-tabs');
@@ -118,11 +176,15 @@ var listItems = [];
 var firstKey = undefined;
 var gallery = undefined;
 var keys = [];
+var lightbox = document.getElementById('gallery-close-up');
+var lightboxImg = document.getElementById('gallery-img');
+var currentIndex = 0;
+var currentKey = undefined;
+var defaultBgColor = document.body.style.backgroundColor;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-
+	if (this.readyState == 4 && this.status == 200) {
 		gallery = JSON.parse(this.responseText);
 
 		var index = 0;
@@ -153,14 +215,14 @@ xhttp.onreadystatechange = function() {
 			}
 		}
 
-		for ( var i = 0; i < listItems.length; i++ ) (function(i){ 
+		for ( var i = 0; i < listItems.length; i++ ) (function(i){
 			listItems[i].onclick = function() {
 				selectTab(i);
 			}
 		})(i);
 
 		generateImages(firstKey);
-  }
+	}
 };
 xhttp.open("GET", "/json/gallery.json", true);
 xhttp.send();
@@ -180,13 +242,13 @@ function generateImages(key) {
 	var images = document.getElementById('images');
 	images.innerHTML = '';
 
-	for (var i = 0; i < gallery[key].length; i += 2) {
+	for (var i = 0; i < gallery[key].length; i += 2) (function(i) {
 		var row = document.createElement('div');
 		row.classList = 'row';
 		images.appendChild(row);
 
-		for (var i2 = 0; i2 < 2; i2++) {
-			if (gallery[key][i + 1] == undefined && i2 == 1) continue;
+		for (var i2 = 0; i2 < 2; i2++) (function(i2){
+			if (gallery[key][i + 1] == undefined && i2 == 1) return;
 
 			var col = document.createElement('div');
 			col.classList = 'col-sm-6 col-md-6 col-lg-6';
@@ -199,20 +261,42 @@ function generateImages(key) {
 			var img = document.createElement('img');
 			img.classList = 'img-responsive';
 			img.alt = 'Tomas Ondrias';
-			var imgSrc = i2 == 0 ? gallery[key][i] : gallery[key][i + 1];
-			img.src = "http://tomasondrias.com/img/" + imgSrc;
+			var imgSrc = "http://tomasondrias.com/img/" + (i2 == 0 ? gallery[key][i] : gallery[key][i + 1]);
+			img.src = imgSrc;
 			thumbnail.appendChild(img);
-		}
-	}
+
+			img.style.cursor = 'pointer';
+			img.onclick = () => {
+				lightbox.style.display = 'flex';
+				document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+				lightboxImg.src = imgSrc;
+				currentKey = key;
+				currentIndex = i;
+			};
+		})(i2);
+	})(i);
+}
+
+function right() {
+	currentIndex++;
+	if (currentIndex == gallery[currentKey].length) currentIndex = 0;
+	lightboxImg.src = "http://tomasondrias.com/img/" + gallery[currentKey][currentIndex];
+}
+
+function left() {
+	currentIndex--;
+	if (currentIndex < 0) currentIndex = gallery[currentKey].length - 1;
+	lightboxImg.src = "http://tomasondrias.com/img/" + gallery[currentKey][currentIndex];
+}
+
+function closeLightbox() {
+	lightbox.style.display = 'none';
+	document.body.style.backgroundColor = defaultBgColor;
 }
 
 </script>
-		</div>
-	</div>
-</div>
-<hr>
 
-  <!-- Footer -->
+<!-- Footer -->
 <footer>
     <div class="container" style="background-color: rgba(248, 248, 248, 0);">
         <div class="row">
@@ -286,5 +370,4 @@ function generateImages(key) {
 
 
 </body>
-
 </html>
