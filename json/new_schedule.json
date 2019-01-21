@@ -1,14 +1,1 @@
-[
-  {
-    "Date": "17 February 2016",
-    "Type": "Predstavenie",
-    "Description": "Operné štúdio - Teodoro In Venezia, postava Acmet",
-    "Place": "Slovenské Narodné Divadlo"
-  },
-  {
-    "Date": "17 February 2016",
-    "Type": "Predstavenie",
-    "Description": "Operné štúdio - Teodoro In Venezia, postava Acmet",
-    "Place": "Slovenské Narodné Divadlo"
-  }
-]
+[{"Date":"17 February 2016","Type":"Predstavenie","Description":"Operné štúdio - Teodoro In Venezia, postava Acmet","Place":"Slovenské Narodné Divadlo"},{"Date":"17 February 2016","Type":"Predstavenie","Description":"Operné štúdio - Teodoro In Venezia, postava Acmet","Place":"Slovenské Narodné Divadlo"},{"Date":"13.12.2018","Type":"Vianočný koncert","Description":"18:00","Place":"Nové mesto nad Váhom"}]
