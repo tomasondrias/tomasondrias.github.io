@@ -9,9 +9,9 @@
     <meta name="description" content="Tomas Ondrias is a graduate of opera singing at the Academy of Performing Arts in Bratislava. He worked with Opernfestspielen St. Margarethen (2012), Operettenfestspielen Bad Hall (2014) under the baton of conductors as Alfred Eschwé, Gustav Kuhn and Gergard Lagrange. While studying at the Academy of Performing Arts he is presented within opera studies as Don Asdrubale and Pulcherio in Mozart's opera Lo Sposo Deluso. He interprets classic songs, opera, operetta and pop opera (operatic pop). As a soloist he sings in vocal-instrumental ensemble Cavalieri, which is mainly devoted to the interpretation of the operetta genre in its specific arrangement. As a soloist he regularly participates in the Slovak National Song Festival, organized by the Matica Slovenská. Tomas Ondrias is an active performer and singer at many events in Slovakia and abroad.">
 	<meta name="keywords" content="opera,tenor,operetta,singing">
 
-    <title>Tomas Ondrias</title>
+    <title>Tomas Ondrias - About me</title>
 
-    <link rel="canonical" href="http://tomasondrias.com/">
+    <link rel="canonical" href="http://tomasondrias.com/about/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -21,9 +21,6 @@
 
     <!-- Site CSS -->
     <link rel="stylesheet" href="/css/tomas.css">
-
-    <!-- Gallery CSS -->
-    <link rel="stylesheet" href="/css/gallery-lightbox.css">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
+
 
 <body>
 
@@ -100,124 +99,48 @@
 
 	<br>
 <br>
-
-<!-- Lightbox -->
-<div id="gallery-close-up">
-    <div class="close-btn" onclick="closeLightbox();">&times;</div>
-    <img id="gallery-img">
-    <div id="left" class="arrow" onclick="left();">&#10094;</div>
-    <div id="right" class="arrow" onclick="right();">&#10095;</div>
-</div>
-
 <!-- Main Content -->
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<br>
-<div align="center">
-	<img class="img-thumbnail selectable-img" src="" alt="Tomas Ondrias" id="fotka1">
+			<h1 class="text-center">About me</h1>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist" style="margin-bottom: 5px;">
+  <li role="presentation" class="active"><a href="#english" aria-controls="english" role="tab" data-toggle="tab">English</a></li>
+  <li role="presentation"><a href="#deutsch" aria-controls="deutsch" role="tab" data-toggle="tab">Deutsch</a></li>
+  <li role="presentation"><a href="#slovensky" aria-controls="slovensky" role="tab" data-toggle="tab">Slovensky</a></li>
+</ul>
+<!-- Tab content -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="english">
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="deutsch">
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="slovensky">
+  </div>
 </div>
 
-<div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive selectable-img" src="" alt="Tomas Ondrias" id="fotka2_lava">
-	  	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive selectable-img" src="" alt="Tomas Ondrias" id="fotka3_prava">
-	  	</div>
-	</div>
-</div>
-
-<br>
-<div class="thumbnail">
-	<div class="embed-responsive embed-responsive-4by3" id="video">
-	</div>
-	<div class="caption" id="video-caption">
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive selectable-img" src="" alt="Tomas Ondrias" id="fotka4_lava">
-	  	</div>
-	</div>
-	<div class="col-sm-6 col-md-6 col-lg-6">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive selectable-img" src="" alt="Tomas Ondrias" id="fotka5_prava">
-	  	</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-sm-12 col-md-12 col-lg-12">
-	  	<div class="thumbnail">
-	    	<img class="img-responsive selectable-img" src="" alt="Tomas Ondrias" id="fotka6">
-	  	</div>
-	</div>
-</div>
+<img class="img-thumbnail" style="float:right; margin-top:25px; margin-bottom:25px;" src="/img/bio.jpg" alt="Tomas Ondrias" >
 
 <script>
 
-var imgs = [];
-currentIndex = 0;
-var lightbox = document.getElementById('gallery-close-up');
-var lightboxImg = document.getElementById('gallery-img');
-var defaultBgColor = document.body.style.backgroundColor;
+function getTxt(language, id) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById(id).innerHTML = this.responseText;
+    }
+  };
 
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-        var imgElements = document.getElementsByClassName('selectable-img');
-        var pageData = JSON.parse(this.responseText);
-        imgs = [ pageData.fotka1, pageData.fotka2_lava, pageData.fotka3_prava, pageData.fotka4_lava, pageData.fotka5_prava, pageData.fotka6 ];
-
-        for ( var i = 0; i < imgs.length; i++ ) (function(i){
-            imgElements[i].src = "http://tomasondrias.com/img/" + imgs[i];
-			imgElements[i].onclick = function() {
-				showLightbox(i);
-			}
-		})(i);
-
-		var iframe = document.createElement('iframe');
-		iframe.width = 560;
-		iframe.height = 420;
-		iframe.innerHTML = '&nbsp;';
-		iframe.src = 'http://www.youtube.com/embed/' + pageData.video.url + '?color=white&amp;theme=light';
-		document.getElementById('video').appendChild(iframe);
-		var caption = `<b>${pageData.video.autor}</b> - ${pageData.video.nazov}`;
-		document.getElementById('video-caption').innerHTML = caption;
-  }
-};
-xhttp.open("GET", "/json/home.json", true);
-xhttp.send();
-
-function showLightbox(i) {
-    currentIndex = i;
-    lightbox.style.display = 'flex';
-    document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
-    lightboxImg.src = "http://tomasondrias.com/img/" + imgs[currentIndex];
+  var url = "/json/" + language + ".txt";
+  xhttp.open("GET", url, true);
+  xhttp.send();
 }
 
-function right() {
-	currentIndex++;
-	if (currentIndex == imgs.length) currentIndex = 0;
-	lightboxImg.src = "http://tomasondrias.com/img/" + imgs[currentIndex];
-}
-
-function left() {
-	currentIndex--;
-	if (currentIndex < 0) currentIndex = imgs.length - 1;
-	lightboxImg.src = "http://tomasondrias.com/img/" + imgs[currentIndex];
-}
-
-function closeLightbox() {
-	lightbox.style.display = 'none';
-	document.body.style.backgroundColor = defaultBgColor;
-}
+getTxt('anglicky', 'english');
+getTxt('slovensky', 'slovensky');
+getTxt('nemecky', 'deutsch');
 
 </script>
 		</div>
