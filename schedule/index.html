@@ -1077,6 +1077,7 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var concerts = JSON.parse(this.responseText);
+		concerts = concerts.reverse();
     for (var i = 0; i < concerts.length; i++) {
       var concert = concerts[i];
       addConcert(concert.Date, concert.Type, concert.Description, concert.Place);
