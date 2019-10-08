@@ -1,5 +1,5 @@
 {
-  "Photos": [
+  "Profile photos": [
     "profi_foto/DSC_4055.jpg",
     "profi_foto/DSC_4093.jpg",
     "profi_foto/DSC_4208.jpg",
@@ -11,7 +11,7 @@
     "profi_foto/DSC_4350cb.jpg",
     "profi_foto/DSC_4173.jpg"
   ],
-  "Brno - Via Lucis": [
+  "Via Lucis - Brno": [
     "Foto jef (4).JPG",
     "Foto jef (5).JPG",
     "Foto jef (6).JPG",
@@ -21,13 +21,21 @@
     "Foto jef (11).JPG",
     "Foto jef (12).JPG"
   ],
-  "Adventný Koncert": [
+  "Concerts": [
+    "1Cifer.jpg",
+    "2Cifer.jpg",
+    "3Primacialny.jpeg",
+    "4Presov.jpg",
+    "5Ruzomberok.jpg",
+    "6Ruzomberok.jpg",
+    "7Ruzomberok.jpg",
+    "8Ruzomberok.jpg",
+    "9Aeneas.jpg",
+    "10Aeneas.jpg",
+    "11Rigoletto.jpg",
+    "12Vianocna ulicka.jpg",
+    "13Primacialny.jpg",
+    "Plagat 1.jpg",
+    "Plagat 2.jpg"
 
-  ],
-  "Dolná Krupá": [
-
-  ],
-  "Mix": [
-
-  ]
 }
